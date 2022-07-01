@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libftasm.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnovotny <jnovotny@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 10:08:42 by jnovotny          #+#    #+#             */
-/*   Updated: 2022/07/01 10:09:25 by jnovotny         ###   ########.fr       */
+/*   Created: 2022/07/01 10:06:40 by jnovotny          #+#    #+#             */
+/*   Updated: 2022/07/01 10:07:05 by jnovotny         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftasm.h"
+#ifndef LIBFTASM_H
+# define LIBFTASM_H
 
-#include <stdio.h>
 
-int main() {
-	printf("Done\n");
-}
+
+#endif // LIBFTASM_H

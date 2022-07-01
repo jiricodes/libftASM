@@ -1,5 +1,5 @@
-section text
+section .text
+        global ft_bzero
+
 ft_bzero:
-    mov rax, 2
-    mov rbx, 3
-    mov rcx, 4
+    enter 0, 0

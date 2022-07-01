@@ -6,7 +6,7 @@
 #    By: jnovotny <jnovotny@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 21:29:07 by jnovotny          #+#    #+#              #
-#    Updated: 2022/07/01 09:52:19 by jnovotny         ###   ########.fr        #
+#    Updated: 2022/07/01 10:06:04 by jnovotny         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ TARGET=libfts.a
 
 ASM_CC=nasm
 ASM_FLAGS=
+ASM_PREFIX=
 
 ASM_SRC=ft_bzero.s
 
@@ -26,8 +27,10 @@ UNAME := $(shell uname -s)
 
 ifeq ($(UNAME), Linux)
 	ASM_FLAGS += -felf64
+	ASM_PREFIX = -dLINUX=1
 else
 	ASM_FLAGS += -fmacho64
+	ASM_PREFIX = --prefix _ -dOSX=1
 endif
 
 .PHONY: all clean fclean re
@@ -38,7 +41,7 @@ $(TARGET): $(ASM_TMP) $(OBJS)
 	ar rcs $(TARGET) $(OBJS)
 
 $(ASM_TMP)/%.o: $(addprefix $(ASM_SRC_DIR)/,%.s)
-	$(ASM_CC) $(ASM_FLAGS) -o $@ $^
+	$(ASM_CC) $(ASM_FLAGS) -o $@ $(ASM_PREFIX) $^
 
 $(ASM_TMP):
 	mkdir -p $(ASM_TMP)
